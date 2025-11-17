@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная страница - Библиотека{% endblock %}
+
+{% block content %}
+<h1>Добро пожаловать в библиотеку</h1>
+
+<div class="section">
+    <h2>Авторы ({{ authors.count }})</h2>
+    {% for author in authors %}
+        <div class="author">
+            <h3><a href="{% url 'books_by_author' author.id %}">{{ author.name }}</a></h3>
+            <p>Email: {{ author.email }} | Страна: {{ author.country }}</p>
+            <p>Дата рождения: {{ author.birth_date }}</p>
+            <p>Статус: {% if author.is_active %}Активен{% else %}Неактивен{% endif %}</p>
+        </div>
+    {% endfor %}
+</div>
+
+<div class="section">
+    <h2>Все книги ({{ books.count }})</h2>
+    {% for book in books %}
+        <div class="book">
+            <h3>{{ book.title }}</h3>
+            <p><strong>Автор:</strong> {{ book.author.name }}</p>
+            <p><strong>Дата публикации:</strong> {{ book.publication_date }}</p>
+            <p><strong>ISBN:</strong> {{ book.isbn }}</p>
+            <p><strong>Страниц:</strong> {{ book.pages }} | <strong>Цена:</strong> {{ book.price }} руб.</p>
+            <p><strong>Статус:</strong> {{ book.get_status_display }}</p>
+            <p><strong>Категории:</strong>
+                {% for category in book.categories.all %}
+                    <span class="category">{{ category.name }}</span>
+                {% endfor %}
+            </p>
+        </div>
+    {% endfor %}
+</div>
+
+<div class="section">
+    <h2>Категории ({{ categories.count }})</h2>
+    {% for category in categories %}
+        <div class="category">{{ category.name }}</div>
+    {% endfor %}
+</div>
+{% endblock %}
