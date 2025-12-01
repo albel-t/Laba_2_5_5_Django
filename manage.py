@@ -20,18 +20,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-'''
-
-# 1. Создайте приложение article (если еще не создано)
-C:\Users\Bill\AppData\Local\Programs\Python\Python313\python.exe manage.py startapp article
-
-# 2. Создайте миграции
-C:\Users\Bill\AppData\Local\Programs\Python\Python313\python.exe manage.py makemigrations
-
-# 3. Примените миграции
-C:\Users\Bill\AppData\Local\Programs\Python\Python313\python.exe manage.py migrate
-
-
-C:\Users\Bill\AppData\Local\Programs\Python\Python313\python.exe manage.py runserver
-
-'''

@@ -1,0 +1,14 @@
+
+    -- C:\Users\Bill\AppData\Local\Programs\Python\Python313\python.exe manage.py startapp article
+
+    C:\Users\Bill\AppData\Local\Programs\Python\Python313\python.exe manage.py makemigrations article
+
+    C:\Users\Bill\AppData\Local\Programs\Python\Python313\python.exe manage.py migrate
+
+    C:\Users\Bill\AppData\Local\Programs\Python\Python313\python.exe manage.py createsuperuser
+
+    C:\Users\Bill\AppData\Local\Programs\Python\Python313\python.exe manage.py runserver
+
+bill
+bill@gmail.com
+123
