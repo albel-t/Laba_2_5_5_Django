@@ -1,0 +1,21 @@
+{% extends 'article/base.html' %}
+
+{% block title %}{{ filter_name }}{% endblock %}
+
+{% block content %}
+<h1>{{ filter_name }}</h1>
+
+<div class="section">
+    {% for journal in journals %}
+        <div class="item journal">
+            <h3>{{ journal.name }}</h3>
+            <p>Уровень: {{ journal.get_level_display }}</p>
+            <p>Издатель: {{ journal.publisher }}</p>
+            <p>Дата публикации: {{ journal.publication_date|date:"d.m.Y" }}</p>
+            <p>Статья: {{ journal.articles.name }}</p>
+        </div>
+    {% empty %}
+        <p>Журналы не найдены</p>
+    {% endfor %}
+</div>
+{% endblock %}
